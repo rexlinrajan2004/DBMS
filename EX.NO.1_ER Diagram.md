@@ -13,12 +13,74 @@
 5. Specify attributes unique, multivalued and composite attributes.
 
 ### ER Diagram 
+![image](https://github.com/rexlinrajan2004/DBMS/assets/119406566/8e2e46ee-3e97-4b74-8124-69cf27ff4d4c)
 
 
 ### Relational model
+![ER diagram](https://github.com/rexlinrajan2004/DBMS/assets/119406566/9b131d39-bf0e-4f69-910e-5790b39f3884)
+
 
 
 ### SQL DDL Schema 
+CREATE TABLE Student
+(
+  Name INT NOT NULL,
+  Student_ID INT NOT NULL,
+  DOB INT NOT NULL,
+  Address INT NOT NULL,
+  Age INT NOT NULL,
+  PRIMARY KEY (Student_ID)
+);
+
+CREATE TABLE Course
+(
+  Course_name INT NOT NULL,
+  Course_code INT NOT NULL,
+  slot INT NOT NULL,
+  time INT NOT NULL,
+  PRIMARY KEY (Course_code)
+);
+
+CREATE TABLE faculty
+(
+  name INT NOT NULL,
+  Salary INT NOT NULL,
+  ID INT NOT NULL,
+  Age INT NOT NULL,
+  PRIMARY KEY (ID)
+);
+
+CREATE TABLE Department
+(
+  Dept_ID INT NOT NULL,
+  Dept_name INT NOT NULL,
+  PRIMARY KEY (Dept_ID)
+);
+
+CREATE TABLE Exam
+(
+  Date INT NOT NULL,
+  Venue INT NOT NULL,
+  Time INT NOT NULL,
+  PRIMARY KEY (Date)
+);
+
+CREATE TABLE Student_Phone_no
+(
+  Phone_no INT NOT NULL,
+  Student_ID INT NOT NULL,
+  PRIMARY KEY (Phone_no, Student_ID),
+  FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID)
+);
+
+CREATE TABLE faculty_phone_no
+(
+  phone_no INT NOT NULL,
+  ID INT NOT NULL,
+  PRIMARY KEY (phone_no, ID),
+  FOREIGN KEY (ID) REFERENCES faculty(ID)
+);
+
 
 ## RESULT 
 <div align="justify">
